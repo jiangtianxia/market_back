@@ -1,0 +1,6 @@
+*.sum
+*.mod
+log
+*.vscode
+upload
+build
