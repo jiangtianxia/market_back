@@ -3,6 +3,11 @@ package conf
 type DefaultConf struct {
 	BucketRate     int64
 	BucketCapacity int64
+	JwtKey         string
+	JwtExpire      int
+	JwtIssuer      string
+	WXAppID        string
+	WXAppSecret    string
 }
 
 type ServerConf struct {
@@ -16,4 +21,11 @@ type ServerConf struct {
 	AllowOrigins    []string
 	OpenCORS        bool
 	IsReleaseMode   bool
+}
+
+type RedisConf struct {
+	RedisHost     string
+	RedisPassword string
+	RedisPort     int
+	RedisDB       int
 }

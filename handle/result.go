@@ -18,15 +18,16 @@ const (
 )
 
 const (
-	ok = iota
+	success = iota
+	failed  = iota
 )
 
 var (
 	// Success ...
-	Success = gin.H{Code: ok, Message: "success"}
+	Success = gin.H{Code: failed, Message: "success"}
 
 	// ErrParam  param error
-	ErrParam = gin.H{Code: ok, Message: "param error"}
+	ErrParam = gin.H{Code: failed, Message: "param error"}
 )
 
 type MError struct {
@@ -60,7 +61,7 @@ func Result(result interface{}) gin.H {
 		}
 	default:
 		return gin.H{
-			Code:    ok,
+			Code:    success,
 			Message: "success",
 			Data:    result,
 		}

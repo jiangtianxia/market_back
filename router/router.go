@@ -2,7 +2,7 @@ package router
 
 import (
 	"fmt"
-	"market_back/common/conf"
+	"market_back/conf"
 	"market_back/handle"
 	mlog "market_back/logger"
 	"market_back/middlewares"
@@ -61,6 +61,15 @@ func Start(cnf *conf.ServerConf) {
 	{
 		// hello
 		v1.GET("/hello", handle.Hello)
+
+		// 用户相关
+		{
+			// 用户登录
+			v1.POST("/user/login", handle.UserHandle.UserLogin)
+
+			// 退出登录
+			v1.GET("/user/logout", handle.UserHandle.UserLogout)
+		}
 	}
 
 	stopChan := make(chan os.Signal, 1)
