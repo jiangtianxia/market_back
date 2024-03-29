@@ -27,7 +27,7 @@ func init() {
 		pflag.StringVar(&DefaultConf.JwtIssuer, "jwt_issuer", "market", "jwt issuer")
 
 		pflag.StringVar(&DefaultConf.WXAppID, "wx_appid", "wx7242543c6f6dcc38", "wx appid")
-		pflag.StringVar(&DefaultConf.WXAppSecret, "wx_app_secret", "a090629d8ee95cec1f67eaf2cda8c1db", "wx app secret")
+		pflag.StringVar(&DefaultConf.WXAppSecret, "wx_app_secret", "", "wx app secret")
 	}
 
 	// 服务配置
